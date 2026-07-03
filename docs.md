@@ -84,3 +84,11 @@ The request returns a wealth of information. Here is an example response for an 
 Middleware services are programs that consume the XRP Ledger APIs on one side and provide their own APIs on the other side.
 
 Unlike client libraries, which are instantiated fresh and shut down with the program that imports them, middleware services typically stay running indefinitely, and may have their own databases (relational SQL databases or otherwise) and configuration files. Some are available as cloud services with various pricing or usage limitations.
+
+### Apps and Services
+
+Atop the stack is where the truly exciting things happen. Apps and services provide a way for users and devices to connect to the XRP Ledger. Services like private exchanges, token issuers, marketplaces, interfaces to the decentralized exchange, and wallets provide user interfaces for buying, selling, and trading various assets including XRP and tokens of all kinds. Many other possibilities exist, including additional services layered even higher.
+
+### XRPL Smart Contracts
+
+Smart contracts on the XRP Ledger work through conditionally held escrows.
