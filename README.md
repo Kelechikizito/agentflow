@@ -53,3 +53,18 @@ Optional but powerful: the XRPL Claude Skills file gives Claude pre-built tools 
 ### Diagram 3 — The owner's view: what you see on the dashboard after everything runs.
 
 ![alt text](image-2.png)
+
+## How X402 works on the XRP Ledger
+
+The X402 flow on the XRP Ledger involves three parties: a merchant (a service that requires payment), a payer agent (a client that pays for access), and a facilitator (a service that verifies the on-chain payment and issues a signed receipt the merchant trusts).
+
+The complete flow:
+
+- Agent requests a resource — the agent calls a protected HTTP endpoint.
+- Merchant returns 402 — the response includes the price, the payment address, and the facilitator URL in a structured header.
+- Agent sends a presigned on-chain transaction — the agent submits a presigned XRP Ledger Payment transaction from the client to the merchant's wallet address for the required amount.
+- Agent obtains a receipt — the agent submits the transaction hash to the facilitator, which verifies the on-chain payment and issues a signed receipt.
+- Agent retries with receipt — the agent re-sends the original request with the receipt in the X-PAYMENT header.
+- Merchant delivers — the merchant verifies the receipt and returns the resource.
+
+![alt text](https://xrpl.org/assets/x402-sequence-light.d8940c6a15da2d1e8aeb567273253439eac318b0eee3be3128fe9d30c9b3dbdf.ac57e6ef.svg)
